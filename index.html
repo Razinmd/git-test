@@ -1,1 +1,221 @@
-sample for git
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Cloud</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: #0f172a;
+        --card: #111827;
+        --line: #22304a;
+        --text: #e5edf8;
+        --muted: #a8b5c9;
+        --green: #38d39f;
+        --blue: #5ca7ff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #0f1f35, var(--bg) 55%);
+        color: var(--text);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 20px 60px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0 28px;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #f8fbff;
+      }
+      .nav {
+        display: flex;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 32px;
+        align-items: center;
+        min-height: 70vh;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 7px 12px;
+        background: rgba(92, 167, 255, 0.12);
+        border: 1px solid rgba(92, 167, 255, 0.3);
+        border-radius: 999px;
+        color: #cfe4ff;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      h1 {
+        margin: 18px 0 16px;
+        font-size: clamp(2.6rem, 5vw, 4.5rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+      }
+      p {
+        margin: 0 0 24px;
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 1.04rem;
+        line-height: 1.7;
+      }
+      .actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .primary {
+        background: linear-gradient(135deg, var(--green), #2dd4bf);
+        color: #041a12;
+      }
+      .secondary {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        color: var(--text);
+      }
+      .panel {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 28px 60px rgba(0,0,0,0.35);
+      }
+      .mini {
+        background: linear-gradient(180deg, #0d172a, #111827);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+      .dots {
+        display: flex;
+        gap: 7px;
+        margin-bottom: 18px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .dot:nth-child(1) { background: #f87171; }
+      .dot:nth-child(2) { background: #fbbf24; }
+      .dot:nth-child(3) { background: #4ade80; }
+      .bars {
+        height: 140px;
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        margin: 20px 0 10px;
+      }
+      .bars span {
+        display: block;
+        flex: 1;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, var(--blue), #6d5efc);
+      }
+      .bars span:nth-child(1){height: 35%}
+      .bars span:nth-child(2){height: 50%}
+      .bars span:nth-child(3){height: 68%}
+      .bars span:nth-child(4){height: 82%}
+      .bars span:nth-child(5){height: 100%}
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .item {
+        padding: 18px 16px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255,255,255,0.02);
+      }
+      .item strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+      .item span { color: var(--muted); font-size: 0.82rem; }
+      @media (max-width: 760px) {
+        .hero, .cards { grid-template-columns: 1fr; }
+        .nav { display: none; }
+        .top { padding-bottom: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="brand">Northstar</div>
+        <nav class="nav">
+          <a href="#">Platform</a>
+          <a href="#">Solutions</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <section>
+          <span class="eyebrow">Production-ready</span>
+          <h1>Ship faster with cleaner cloud infrastructure.</h1>
+          <p>Build, test, and deploy confidently with a lightweight workflow designed for modern teams and fast-moving AWS environments.</p>
+          <div class="actions">
+            <a class="btn primary" href="#">Get started</a>
+            <a class="btn secondary" href="#">View demo</a>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <div class="mini">
+            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="bars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="stats"><span>Uptime 99.9%</span><span>+42% this month</span></div>
+          </div>
+          <div class="cards">
+            <div class="item"><strong>2.4x</strong><span>Faster deploys</span></div>
+            <div class="item"><strong>24/7</strong><span>Monitoring</span></div>
+            <div class="item"><strong>99.9%</strong><span>Reliability</span></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
+
